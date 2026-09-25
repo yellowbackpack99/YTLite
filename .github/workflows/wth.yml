@@ -1,4 +1,4 @@
-name: '[wtf] Create YouTube Plus app'
+name: '[wth] Create YouTube Plus app'
 
 on:
   workflow_dispatch:
