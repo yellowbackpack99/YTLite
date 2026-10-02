@@ -233,6 +233,11 @@ Returned to the original VolumeBoostYT tweak because the fork used in MaxTube 1.
 <li><strong>1.6.2 (September 14 2026):</strong></li>
 • Fixed Gonerino lag issue in playlists
 
+<li><strong>1.7 (September 26 2026):</strong></li>
+• Updated YTPlus to version 6.0b1
+
+• My tweak YTPlaybackFix will not be in my prebulit IPAs anymore, as YTPlus now has its own and seems better, and also Gonerino will not be anymore in my pre-compiled IPAs, because it caused issues, but if you want them you can build an IPA by yourself with them with GitHub Actions
+
 ## Supported YouTube Version
 <ul>
    <li><strong>Latest confirmed:</strong> <em>21.13.6</em></li>

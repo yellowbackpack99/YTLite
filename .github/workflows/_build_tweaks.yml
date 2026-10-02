@@ -156,7 +156,7 @@ jobs:
       - name: Download YouTube Plus (by ver)
         if: ${{ inputs.tweak_version != '' }}
         run: |
-          deb_url="https://github.com/Mark02-2012/YTPlusM/releases/download/YTPlusVersions/com.dvntm.ytlite_${{ inputs.tweak_version }}_iphoneos-arm.deb"
+          deb_url="https://github.com/Mark02-2012/MaxTube/releases/download/YTPlusVersions/com.dvntm.ytlite_${{ inputs.tweak_version }}_iphoneos-arm.deb"
           wget "$deb_url" --no-verbose -O ytplus.deb
 
       - name: Download YouTube Plus (by URL)
@@ -253,7 +253,7 @@ jobs:
 
       - name: Clone YTPlaybackFix beta branch
         if: ${{ inputs.enable_ytpfBETA }}
-        run: git clone --quiet --depth=1 -b beta-testing https://github.com/Mark02-2012/YTPlaybackFix.git
+        run: git clone --quiet --depth=1 -b beta https://github.com/Mark02-2012/YTPlaybackFix.git
 
       - name: Clone YouChooseQuality
         if: ${{ inputs.enable_ycq }}

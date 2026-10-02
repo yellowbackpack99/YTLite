@@ -99,12 +99,6 @@ on:
        required: true
        default: false
 
-      enable_pdstm:
-       description: "Generate PleaseDontStopTheMusic (MaxTube)"
-       type: boolean
-       required: true
-       default: false
-
       enable_youloop:
        description: "NEW! Generate YouLoop (MaxTube)"
        type: boolean
@@ -266,7 +260,7 @@ jobs:
 
       - name: Clone YTPlaybackFix beta branch
         if: ${{ inputs.enable_ytpfBETA }}
-        run: git clone --quiet --depth=1 -b beta-testing https://github.com/Mark02-2012/YTPlaybackFix.git
+        run: git clone --quiet --depth=1 -b beta https://github.com/Mark02-2012/YTPlaybackFix.git
 
       - name: Clone YouChooseQuality
         if: ${{ inputs.enable_ycq }}
@@ -275,10 +269,6 @@ jobs:
       - name: Clone YouShare
         if: ${{ inputs.enable_ys }}
         run: git clone --quiet --depth=1 https://github.com/Tonwalter888/YouShare.git
-
-      - name: Clone PleaseDontStopTheMusic
-        if: ${{ inputs.enable_pdstm }}
-        run: git clone --quiet --depth=1 https://github.com/mikey820/PleaseDontStopTheMusic.git
 
       - name: Clone YouLoop
         if: ${{ inputs.enable_youloop }}
@@ -377,14 +367,6 @@ jobs:
         if: ${{ inputs.enable_ys }}
         run: |
           cd YouShare && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-
-      - name: Build PleaseDontStopTheMusic
-        if: ${{ inputs.enable_pdstm }}
-        run: |
-          cd PleaseDontStopTheMusic
-          find . -name "*.deb" -delete 2>/dev/null || true
-          find . -name "packages" -type d -exec rm -rf {} + 2>/dev/null || true
-          $(MAKE) -C rootless package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless || true
 
       - name: Build YouLoop
         if: ${{ inputs.enable_youloop }}
